@@ -1,0 +1,23 @@
+<template>
+  <div class="container">
+  </div>
+</template>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { AdsListGet } from '@/api/api';
+@Component
+export default class extends Vue {
+  private Loading = true;
+  created () {
+    this.getList();
+  }
+
+  private async getList() {
+    this.Loading = true;
+    const { data } = await AdsListGet();
+    console.log(data);
+  }
+}
+</script>
+<style lang="scss" scoped>
+</style>
