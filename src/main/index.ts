@@ -7,9 +7,11 @@ import { app, BrowserWindow } from 'electron'
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  const globalAny:any = global;
+  const globalAny: any = global
   globalAny.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
+
+/* eslint-disable */
 
 let mainWindow: any
 const winURL = process.env.NODE_ENV === 'development'
