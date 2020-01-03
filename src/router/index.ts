@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from 'vue'
+import Router from 'vue-router'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
@@ -9,11 +9,11 @@ export default new Router({
     {
       path: '/',
       name: 'landing-page',
-      component: require('@/views/home').default
+      component: require('@/views/index/index').default
     },
     {
       path: '*',
       redirect: '/'
     }
   ]
-});
+})

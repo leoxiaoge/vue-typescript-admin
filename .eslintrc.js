@@ -35,13 +35,12 @@ module.exports = {
     camelcase: 0,
     'no-new': 0,
     indent: 'off',
-    'semi': "off", // 要求或禁止使用分号代替 ASI
+    'semi': "off",
     // 设置typescript-eslint规则
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
-    '@typescript-eslint/semi': ['error'],
+    '@typescript-eslint/semi': ["error", "never"], // 要求或禁止使用分号代替 ASI
     '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-explicit-any': 0
-  },
-  globals: { wx: true }
+  }
 };

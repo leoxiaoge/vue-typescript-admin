@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -59,6 +61,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]
   },
   devtool: false,
+  stats: { 
+    children: false 
+  },
   module: {
     rules: [{
       test: /\.(less|css)$/,
@@ -95,7 +100,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: path.resolve(__dirname, '../dist/prod/index.html'),
       template: 'index.html',
       inject: true,
-      favicon: path.resolve('../static/icons/favicon.ico'),
+      favicon: path.resolve(__dirname, '../static/icons/favicon.ico'),
       title: 'title',
       minify: {
         removeComments: true,

@@ -1,3 +1,5 @@
+'use strict'
+
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
@@ -11,7 +13,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
-      rewrites: [{from: /.*/, to: '/index.html'}]
+      rewrites: [{ from: /.*/, to: '/index.html' }]
     },
     hot: true,
     contentBase: false,
@@ -19,7 +21,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: process.env.HOST || 'localhost',
     port: +process.env.PORT || 8080,
     open: false, // 自动打开浏览器
-    overlay: {warnings: false, errors: true}, // 展示全屏报错
+    overlay: { warnings: false, errors: true }, // 展示全屏报错
     publicPath: '/',
     proxy: {},
     quiet: true, // for FriendlyErrorsPlugin
@@ -64,7 +66,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true
     })
   ]
-});
+})
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = +process.env.PORT || 8082
@@ -77,7 +79,7 @@ module.exports = new Promise((resolve, reject) => {
         compilationSuccessInfo: {
           messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
         },
-        onErrors: undefined,
+        onErrors: undefined
       }))
       resolve(devWebpackConfig)
     }

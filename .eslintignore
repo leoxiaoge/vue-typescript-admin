@@ -2,7 +2,4 @@
 /config/
 /dist/
 /*.js
-/src/main/
-/src/renderer/
-/src/store/
-/src/test/
+/test/

@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 const eslintFriendlyFormatter = require('eslint-friendly-formatter')
 
@@ -35,6 +37,7 @@ module.exports = {
         loader: 'eslint-loader',
         options: {
           fix: false,
+          formatter: eslintFriendlyFormatter,
           extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx'],
           cache: false,
           emitWarning: true,
